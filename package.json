@@ -1,0 +1,16 @@
+{
+  "name": "fastify-on-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lambda.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/aws-lambda": "^4.1.0",
+    "fastify": "^4.28.0"
+  }
+}
