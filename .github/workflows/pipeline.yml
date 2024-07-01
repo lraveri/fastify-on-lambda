@@ -27,6 +27,12 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Create build directory
+        run: mkdir -p build
+
+      - name: Verify build directory exists
+        run: ls -la build
+
       - name: Zip files for deployment
         run: zip -r build/function.zip . -x '*.git*' -x 'terraform/*' -x 'build/*' -x '.idea/*'
 
