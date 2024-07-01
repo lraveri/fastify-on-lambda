@@ -53,6 +53,9 @@ jobs:
         with:
           name: lambda-function
 
+      - name: Verify build directory exists and list contents
+        run: ls -la build
+
       - name: Deploy to AWS Lambda
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
