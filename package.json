@@ -2,9 +2,9 @@
   "name": "fastify-on-lambda",
   "version": "1.0.0",
   "description": "",
-  "main": "lambda.js",
+  "main": "src/lambda.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",

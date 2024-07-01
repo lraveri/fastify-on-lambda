@@ -28,13 +28,13 @@ jobs:
         run: npm test
 
       - name: Zip files for deployment
-        run: zip -r function.zip . -x '*.git*'
+        run: zip -r build/function.zip . -x '*.git*' -x 'terraform/*' -x 'build/*' -x '.idea/*'
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: lambda-function
-          path: function.zip
+          path: build/function.zip
 
   deploy:
     needs: build
@@ -53,4 +53,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws lambda update-function-code --function-name fastifyAWSLambda --zip-file fileb://function.zip
+          aws lambda update-function-code --function-name fastifyAPIOnAWSLambda --zip-file fileb://build/function.zip

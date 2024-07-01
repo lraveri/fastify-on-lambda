@@ -2,11 +2,11 @@ const fastify = require('fastify')
 
 const app = fastify()
 app.get('/hello', (request, reply) => {
-    reply.send({ message: 'Hello from AWS Lambda' })
+    reply.send({ message: 'Hello from AWS Lambda!' })
 })
 
 app.post('/hello', (request, reply) => {
-    reply.send({ message: `Hello ${request.body.name} from AWS Lambda`})
+    reply.send({ message: `Hello ${request.body.name} from AWS Lambda!`})
 })
 
 if (require.main === module) {
