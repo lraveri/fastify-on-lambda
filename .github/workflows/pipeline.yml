@@ -53,13 +53,10 @@ jobs:
         with:
           name: lambda-function
 
-      - name: Verify build directory exists and list contents
-        run: ls -la build
-
       - name: Deploy to AWS Lambda
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws lambda update-function-code --function-name fastifyAPIOnAWSLambda --zip-file fileb://build/function.zip
+          aws lambda update-function-code --function-name fastifyAPIOnAWSLambda --zip-file fileb://function.zip
